@@ -80,6 +80,12 @@ fixperms () {
     chown $verbose $account:nobody $HOMEDIR/public_html
     chmod $verbose 750 $HOMEDIR/public_html
 
+    #Fix maildir  
+    echo "Fixing maildir...."
+    find $HOMEDIR/mail -type d -exec chmod $verbose 751 {} \;    
+    find $HOMEDIR/mail -type f | xargs -d$'\n' -r chmod $verbose 640
+    chown $verbose -R $account:$account $HOMEDIR/mail/* 
+
     #Fix subdomains that lie outside of public_html
     tput setaf 3
     tput bold
