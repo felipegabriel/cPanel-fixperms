@@ -19,6 +19,8 @@ Note: This is inteded for **non-DSO** servers (Meaning, it will run just fine fo
 To get the `fixperms` script, simply wget the file from GitHub and make sure it's executable:
 
 ```bash
+cd ~
+rm fixperms.sh -rf
 wget https://raw.githubusercontent.com/felipegabriel/cPanel-fixperms/master/fixperms.sh
 chmod +x fixperms.sh
 ```
