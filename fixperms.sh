@@ -73,6 +73,7 @@ fixperms () {
     find $HOMEDIR/* -name .htaccess -exec chown $verbose $account.$account {} \;
     
     #Fix maildir
+    echo "Fixing maildir...."
     find $HOMEDIR/mail -type d -exec chmod $verbose 751 {} \;    
     find $HOMEDIR/mail -type f | xargs -d$'\n' -r chmod $verbose 640
     chown $verbose -R $account:$account $HOMEDIR/mail/*    
