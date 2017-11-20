@@ -71,6 +71,8 @@ fixperms () {
     find $HOMEDIR/public_html -name '*.cgi' -o -name '*.pl' | xargs -r chmod $verbose 755
     chown $verbose -R $account:$account $HOMEDIR/public_html/*
     chown $verbose -R $account:$account $HOMEDIR/*
+    chown $verbose -R $account:$account $HOMEDIR/
+    chown $verbose -R $account:$account $HOMEDIR/.*
     find $HOMEDIR/* -name .htaccess -exec chown $verbose $account.$account {} \;
     
     #Fix maildir  
